@@ -2,3 +2,5 @@
  #306161  color para navbar
  
  #83a8a8 color fondo
+
+#E2EEF1 color letras
