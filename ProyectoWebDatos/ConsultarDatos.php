@@ -9,6 +9,46 @@
     <script src="js/jquery-3.6.1.js"></script>
 </head>
 <body>
+
+<?php 
+$sql = "select * from usuarios";
+$datos = $conexion->query($sql);
+?>
+
+<?php   ?>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>ubicacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if($datos->num_rows > 0){
+                        while($row = $datos->fetch_assoc()){
+                    ?>
+                    <tr>
+                        <td><?php echo $row["id"]; ?></td>
+                        <td><?php echo $row["nombre"]; ?></td>
+                        <td><?php echo $row["correo"]; ?></td>
+                        <td><?php echo $row["telefono"]; ?></td>
+                        <td><?php echo $row["ubicacion"]; ?></td>
+                    </tr>
+                        }
+                    }
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
     
 </body>
 </html>
