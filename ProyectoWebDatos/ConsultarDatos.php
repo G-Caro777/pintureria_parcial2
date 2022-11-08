@@ -11,11 +11,12 @@
 <body>
 
 <?php 
+include 'Conexion.php';
 $sql = "select * from usuarios";
 $datos = $conexion->query($sql);
 ?>
 
-<?php   ?>
+<?php include 'menu.php'; ?>
 <br>
 <div class="container">
     <div class="row">
@@ -31,24 +32,35 @@ $datos = $conexion->query($sql);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if($datos->num_rows > 0){
-                        while($row = $datos->fetch_assoc()){
-                    ?>
+                <?php if($datos->num_rows > 0) { 
+                          while($row = $datos->fetch_assoc()) {
+                      ?>
                     <tr>
                         <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["nombre"]; ?></td>
                         <td><?php echo $row["correo"]; ?></td>
                         <td><?php echo $row["telefono"]; ?></td>
                         <td><?php echo $row["ubicacion"]; ?></td>
+                        <td>
+                                <a href="actualizarRegistro.php?id=<?php echo $row["id"]; ?>" class="btn btn-primary">Editar</a>
+                                <a href="eliminarRegistro.php?id=<?php echo $row["id"]; ?>" class="btn btn-danger">Eliminar</a>
+                            </td>
                     </tr>
+                    <?php
                         }
                     }
-                    
+                    $conexion->close();
+                      ?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<footer class="text-center">
+        <hr>
+        2022 &copy; Cetis107 Desarrollo Web
+    </footer>
+    <script src="js/bootstrap.js"></script>
     
 </body>
 </html>

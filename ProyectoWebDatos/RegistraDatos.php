@@ -9,12 +9,13 @@
     <script src="js/jquery-3.6.1.js"></script>
 </head>
 <body>
-
+    <?php include 'menu.php'; ?>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-12">
                <h1>Registrar usuario</h1>
-               <form method="post" action="">
+               <form method="post" action="GuardarDatos.php">
                    <div class="form-group">
                        <label for="">Nombre:</label>
                        <input type="text" class="form-control" name="nombre" placeholder="Escriba su nombre">
@@ -22,7 +23,7 @@
 
                    <div class="form-group">
                        <label for="">Correo electrónico:</label>
-                       <input type="email" class="form-control" name="correo" placeholder="Escriba su correo">
+                       <input type="text" class="form-control" name="correo" placeholder="Escriba su correo">
                    </div>
 
                    <div class="form-group">
