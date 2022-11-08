@@ -1,3 +1,4 @@
+APUNTES PARA TRABAJAR --- NO ES NADA RELEVANTE
 # pintureria_parcial2
  #306161  color para navbar
  
